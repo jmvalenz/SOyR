@@ -7,17 +7,17 @@ class CommandLineTools(object):
   @staticmethod
   def ImprimirComandos():
     opciones = [ "Opciones Disponibles:\n"
-               "\tHacer Llamada; Fecha Entrada; Prioridad; Número; Tiempo de Duración",    \
-               "\tRecibir Llamada; Fecha Entrada; Prioridad; Número; Tiempo de Duración",  \
-               "\tEnviar Mensaje; Fecha Entrada; Prioridad; Número; Texto",                \
-               "\tRecibir Mensaje; Fecha Entrada; Prioridad; Número; Texto",               \
-               "\tAgregar Contacto; Fecha Entrada; Prioridad; Nombre; Numero ",            \
-               "\tProceso Cualquiera; Fecha Entrada; Prioridad; Tiempo de Duración",       \
-               "\tEnviar Ubicación; Fecha Entrada; Prioridad",                             \
-               "\tVer Ubicación; Fecha Entrada; Prioridad; Tiempo de Duración",            \
-               "\tJugar; Prioridad; Fecha Entrada; Tiempo de Duración",                    \
-               "\tEscuchar Música; Fecha Entrada; Prioridad; Tiempo de Duración",          \
-               "\n\tEjemplo: Hacer Llamada; 20; 0; 90353108; 20"
+               "\tHacer Llamada; Prioridad; Número; Tiempo de Duración",    \
+               "\tRecibir Llamada; Prioridad; Número; Tiempo de Duración",  \
+               "\tEnviar Mensaje; Prioridad; Número; Texto",                \
+               "\tRecibir Mensaje; Prioridad; Número; Texto",               \
+               "\tAgregar Contacto; Prioridad; Nombre; Numero ",            \
+               "\tProceso Cualquiera; Prioridad; Tiempo de Duración",       \
+               "\tEnviar Ubicación; Prioridad",                             \
+               "\tVer Ubicación; Prioridad; Tiempo de Duración",            \
+               "\tJugar; Prioridad; Tiempo de Duración",                    \
+               "\tEscuchar Música; Prioridad; Tiempo de Duración",          \
+               "\n\tEjemplo: Hacer Llamada; 0; 90353108; 20"
              ]
     for opcion in opciones:
       print opcion
