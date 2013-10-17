@@ -2,7 +2,7 @@
 # Parses all the actions to be excecuted
 from Process import *
 from operator import attrgetter
-class Parser:
+class Parser(object):
   
   def __init__(self):
     self.eventsList = []
@@ -60,31 +60,30 @@ class Parser:
       return EscucharM(accion[0],int(accion[1]),accion[3],int(accion[4]))
     return None
 
-  def CheckCommand(self, command):
+  def CheckCommand(self, command, time):
     splitted = command.split(";")
     accion = [x.strip() for x in splitted]
     tipo = self.GetTipo(accion[0])
     if tipo == -1:
       return False
-    self.eventsList.append(self.ParseCommand(accion, tipo))
-    print "OK"
-    return True
+    return self.ParseCommand(accion, tipo, time)
+    
 
-  def ParseCommand(self, accion, tipo):
+  def ParseCommand(self, accion, tipo, time):
     if tipo == 1 or tipo == 2:
-      return Llamada(tipo,accion[0],int(accion[1]),accion[2],accion[3],int(accion[4]))
+      return Llamada(tipo,accion[0], time, accion[2], accion[3], int(accion[4]))
     if tipo == 3 or tipo == 4:
-      return Mensaje(tipo,accion[0],int(accion[1]),accion[2],accion[3],accion[4])
+      return Mensaje(tipo,accion[0], time, accion[2], accion[3], accion[4])
     if tipo == 5:
-      return Contacto(accion[0],int(accion[1]),accion[2],accion[3],accion[4])
+      return Contacto(accion[0], time, accion[2], accion[3],accion[4])
     if tipo == 6:
-      return Cualquiera(accion[0],int(accion[1]),accion[2],int(accion[3]))
+      return Cualquiera(accion[0], time, accion[2], int(accion[3]))
     if tipo == 7:
-      return MUbicacion(accion[0],int(accion[1]),accion[2])
+      return MUbicacion(accion[0], time, accion[2]) 
     if tipo == 8:
-      return VUbicacion(accion[0],int(accion[1]),accion[2],int(accion[3]))
+      return VUbicacion(accion[0], time, accion[2], int(accion[3]))
     if tipo == 9: 
-      return Jugar(accion[0],int(accion[1]),accion[2],int(accion[3]))
+      return Jugar(accion[0], time, accion[2], int(accion[3]))
     if tipo == 10:
-      return EscucharM(accion[0],int(accion[1]),accion[2],int(accion[3]))
+      return EscucharM(accion[0], time, accion[2], int(accion[3]))
     return None

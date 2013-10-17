@@ -1,6 +1,8 @@
+from CommandLineTools import CommandLineTools
+
 #Represents the Operating System
 
-class OS:
+class OS(object):
 
   #Constructor
   def __init__(self):
@@ -48,13 +50,8 @@ class OS:
       self.__thirdLevelProc.append(actual)
 
   #Shows a list with the information of the proceses that are being executed
-  def TopFunction(self):
-    for p in self.__firstLevelProc:
-      p.printing()
-    for p in self.__secondLevelProc:
-      p.printing()
-    for p in self.__thirdLevelProc:
-      p.printing()
+  def TopFunction(self, time):
+    CommandLineTools.TopFunction(time, self.__firstLevelProc, self.__secondLevelProc, self.__thirdLevelProc)
 
   #Returns true if the three queues are empty
   def AllFinished(self):
