@@ -1,5 +1,5 @@
 
-class Inode:
+class Inode(object):
 	
 	#Metadata... Definir bien esto
 	blocks=list()

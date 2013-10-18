@@ -1,12 +1,12 @@
 from Inode import *
 
 
-available=list()
+availableDisc=list()
 inodes={}
 
 #Metodo que bootea el sistema operativo, es decir, carga todo lo necesario
 def boot():
-	global available
+	global availableDisc
 	global inodes
 	f = open('disco/0.txt')
 	#Saco la primera linea, solo dice IN: y no es necesaria para nada
@@ -21,29 +21,24 @@ def boot():
 		inodes[inode.name]=inode       
 
 	#Guardo todos los bloques disponibles
-	available.extend(f)
+	availableDisc.extend(f)
 	f.close()
 	f = open('disco/1.txt')
-	available.extend(f)
+	availableDisc.extend(f)
 	f.close()
 	f = open('disco/2.txt')
-	available.extend(f)
+	availableDisc.extend(f)
 	f.close()
 	f = open('disco/3.txt')
-	available.extend(f)
+	availableDisc.extend(f)
 	f.close()
 	f = open('disco/4.txt')
-	available.extend(f)
+	availableDisc.extend(f)
 	f.close()
 
 	#Elimino simbolos blancos para evitar futuros problemas
-	available=[item.strip() for item in available]
+	availableDisc=[item.strip() for item in availableDisc]
 
-	print "lalalalallalaallala"
+	
 
-	for item in available:
-		print "-------"
-		print item
-	print inodes.keys()
 
-boot()
