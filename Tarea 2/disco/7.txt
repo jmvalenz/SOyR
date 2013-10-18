@@ -1,2 +1,3 @@
-Nombre: Mensajes.txt          
-Ubicación: SOyR/Tarea2/disco  
+Nombre: Historial.txt
+Ubicación: SOyR/Tarea2/disco
+Puntero: null

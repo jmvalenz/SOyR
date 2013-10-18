@@ -12,7 +12,7 @@ for i in range (0,800):
 ##Nota: el archivo 0.txt tiene los indices de los otros inodos y comienza
 ##con las posiciones de archivos disponibles a partir de la linea 5
 archi=open('disco/0.txt','a')
-archi.write("IN:\n001\n002\n003\nNO:\n")
+archi.write("IN:\n005\n006\n007\nNO:\n")
 for i in range(11,177):
     if(i<10):
         d="00"
@@ -92,10 +92,10 @@ for i in range(690,800):
 ##en total tenemos 453bytes por el primer archivo y 513 por el segundo.453 + 513 = 966 bytes para cada tipo
 ##966/3 = 322, finalmente tenemos 322 direcciones posibles para contactos, 322 para mensajes y 322 para historial
 archi=open('disco/5.txt','a')
-archi.write("Nombre: Contactos.txt         \nUbicación: SOyR/Tarea2/disco  ")
+archi.write("Nombre: Contactos.txt\nUbicación: SOyR/Tarea2/disco\nPuntero: null")
+archi=open('disco/6.txt','a')
+archi.write("Nombre: Mensajes.txt\nUbicación: SOyR/Tarea2/disco\nPuntero: null")
 archi=open('disco/7.txt','a')
-archi.write("Nombre: Mensajes.txt          \nUbicación: SOyR/Tarea2/disco  ")
-archi=open('disco/9.txt','a')
-archi.write("Nombre: Historial.txt         \nUbicación: SOyR/Tarea2/disco  ")
-archi=open('disco/9.txt','a')
+archi.write("Nombre: Historial.txt\nUbicación: SOyR/Tarea2/disco\nPuntero: null")
+archi=open('disco/7.txt','a')
 archi.close

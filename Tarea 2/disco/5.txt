@@ -1,2 +1,3 @@
-Nombre: Contactos.txt         
-Ubicación: SOyR/Tarea2/disco  
+Nombre: Contactos.txt
+Ubicación: SOyR/Tarea2/disco
+Puntero: null
