@@ -15,9 +15,9 @@ class OS(object):
 
   #Receives a process and puts it into the corresponding queue depending on its priority
   def ProcessRequest(self, newProcess):
-    if(newProcess.tipo == "1" or newProcess.tipo == "2"):
+    if(newProcess.tipo == 1 or newProcess.tipo == 2):
       self.__firstLevelProc.append(newProcess)
-    elif(newProcess.tipo == "3" or newProcess.tipo == "4"):
+    elif(newProcess.tipo == 3 or newProcess.tipo == 4):
       self.__secondLevelProc.append(newProcess)
     else:
       self.__thirdLevelProc.append(newProcess)
@@ -60,3 +60,4 @@ class OS(object):
   #Runs a process
   def __RunProccess(self, process):
     process.SetTiempo()
+    process.PasarTiempo()
