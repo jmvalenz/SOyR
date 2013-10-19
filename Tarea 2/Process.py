@@ -16,8 +16,7 @@ class Process(object):
     return self.tiempo
   def GetFecha(self):
     return self.fecha
-  def printing(self):
-    print str(self.tipo)+str(self.nombre)+str(self.fecha)+str(self.prioridad)
+  
   def calcTiempo(self,tiempo):
     self.tiempo=tiempo
   def BeforeFinish(self):

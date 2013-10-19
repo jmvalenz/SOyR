@@ -53,10 +53,22 @@ class CommandLineTools(object):
     print "Para interrumpir e ingresar evento manualmente, presione cualquier tecla"
     print "--------------------------------------------------"
     print "Tiempo transcurrido: ", time, " segundos"
+    print "Procesos: ", (len(first_level) + len(second_level) + len(third_level)), " en total\n"
+    list_of_processes = [("NIVEL", "NOMBRE", "FECHA INGRESO", "TIEMPO RESTANTE", "PRIORIDAD")]
     for p in first_level:
-      p.printing()
+      list_of_processes.append(("1", str(p.nombre), str(p.fecha), str(p.tiempo), str(p.prioridad)))
     for p in second_level:
-      p.printing()
+      list_of_processes.append(("2", str(p.nombre), str(p.fecha), str(p.tiempo), str(p.prioridad)))
     for p in third_level:
-      p.printing()
+      list_of_processes.append(("3", str(p.nombre), str(p.fecha), str(p.tiempo), str(p.prioridad)))
+    CommandLineTools.PrintTableWithProcesses(list_of_processes)
     print "--------------------------------------------------"
+
+  @staticmethod
+  def PrintTableWithProcesses(processes):
+    longg = dict.fromkeys((0,1,2,3,4),0)
+    for tu in processes:
+      for i,el in enumerate(tu):
+        longg[i] = max(longg[i],len(str(el)))
+    fofo = '  '.join('%'+str(longg[i])+'s' for i in xrange(0,5))
+    print '\n'.join(fofo % (a,b,c,d,e) for (a,b,c,d,e) in processes)
