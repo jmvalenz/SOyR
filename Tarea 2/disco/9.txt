@@ -1,2 +1,0 @@
-Nombre: Historial.txt         
-Ubicación: SOyR/Tarea2/disco  
