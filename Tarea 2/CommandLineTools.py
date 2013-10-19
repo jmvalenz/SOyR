@@ -51,7 +51,7 @@ class CommandLineTools(object):
   def TopFunction(time, first_level, second_level, third_level):
     CommandLineTools.Cls()
     print "Para interrumpir e ingresar evento manualmente, presione cualquier tecla"
-    print "-------------------------"
+    print "--------------------------------------------------"
     print "Tiempo transcurrido: ", time, " segundos"
     for p in first_level:
       p.printing()
@@ -59,4 +59,4 @@ class CommandLineTools(object):
       p.printing()
     for p in third_level:
       p.printing()
-    print "-------------------------"
+    print "--------------------------------------------------"
