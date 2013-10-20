@@ -28,11 +28,14 @@ def writeToDisc(info, tipo):##tipo se refiere a si se esta escribiendo un contac
                         for j in range(0,len(l)):
                                 cont=cont+len(l[j][:-1])
                         espacioUsado=len(tipoArchivo)+cont
-                        if espacioUsado<=513:
+                        if espacioUsado<513:
                                 w.write(info+"\n")
                                 return
-
-writeToDisc("hola","mensaje")
+                        else:
+                                dif=513-espacioUsado
+                                w.write(info[dif])
+                                del availableDisc[i]
+                                writeToDisc(info[dif:],tipo)
                                 
                 
      
