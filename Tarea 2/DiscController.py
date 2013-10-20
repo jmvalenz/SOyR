@@ -17,7 +17,6 @@ def AgregarPuteroAInodo(puntero,tipo):
         if tipo=="historial":
                 inodes["Nombre: Historial.txt\n"].blocks.append(puntero)
 def writeToDisc(info, tipo):##tipo se refiere a si se esta escribiendo un contacto, mensaje o historial
-        boot()
         for i in range(0,len(availableDisc)):
                 u=availableDisc[i][:3]
                 w=open('disco/'+str(int(u))+'.txt','a')
@@ -43,5 +42,9 @@ def writeToDisc(info, tipo):##tipo se refiere a si se esta escribiendo un contac
                                 w.write(info[dif])
                                 del availableDisc[i]
                                 writeToDisc(info[dif:],tipo)
+
+
+        
+        
 
 
