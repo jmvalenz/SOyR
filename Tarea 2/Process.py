@@ -54,7 +54,7 @@ class Mensaje(Process):# dejare el tipo en el constructor. con el fin de usar es
     f.close()
 
   def calcTiempo(self, mensaje):
-    self.tiempo = int(math.ceil(len(mensaje)*0.2)) # ver  bien por cuento se multiplica
+    self.tiempo = int(math.ceil(len(mensaje) * 0.2)) # ver  bien por cuento se multiplica
     self.tiempoTotal = self.tiempo
 
 
