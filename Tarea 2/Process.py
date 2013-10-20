@@ -40,20 +40,21 @@ class Mensaje(Process):# dejare el tipo en el constructor. con el fin de usar es
     self.calcTiempo(texto)
 
   def BeforeFinish(self):
-    f = open("mensajes.txt", "a")
     if(self.tipo == 3):
       destino = "enviado"
       dePara = "para"
     else:
       destino = "recibido"
       dePara = "de"
+    f = open("mensajes.txt", "a")
     f.write("Mensaje " + destino + \
             " " + dePara + \
             " " + self.receptor + \
             ". Texto: " + self.texto)
+    f.close()
 
   def calcTiempo(self, mensaje):
-    self.tiempo = int(math.ceil(len(list(str(mensaje)))*0.2)) # ver  bien por cuento se multiplica
+    self.tiempo = int(math.ceil(len(mensaje)*0.2)) # ver  bien por cuento se multiplica
     self.tiempoTotal = self.tiempo
 
 
