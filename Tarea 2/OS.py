@@ -51,7 +51,7 @@ class OS(object):
 
   #Shows a list with the information of the proceses that are being executed
   def TopFunction(self, time):
-    CommandLineTools.TopFunction(time, self.__firstLevelProc, self.__secondLevelProc, self.__thirdLevelProc)
+    CommandLineTools.TopFunction(time, self.__firstLevelProc, self.__secondLevelProc, self.__thirdLevelProc, self)
 
   #Returns true if the three queues are empty
   def AllFinished(self):
@@ -61,3 +61,11 @@ class OS(object):
   def __RunProccess(self, process):
     process.SetTiempo()
     process.PasarTiempo()
+
+  def NumberOfRunningProcesses(self):
+    if(len(self.__firstLevelProc) > 0 or len(self.__secondLevelProc) > 0 or len(self.__thirdLevelProc) > 0):
+      return 1
+    return 0
+
+  def NumberOfProcesses(self):
+    return len(self.__firstLevelProc) + len(self.__secondLevelProc) + len(self.__thirdLevelProc)

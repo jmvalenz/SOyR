@@ -63,7 +63,7 @@ class Simulator(object):
           self.oSystem.ProcessRequest(aux)
         else:
           break
-      time.sleep(0.1) #Pause
+      time.sleep(0.2) #Pause
       self.simTime += 1 #Time advances
       if kbhit():
         self.AddNewEvent()
@@ -71,7 +71,7 @@ class Simulator(object):
 
 
   def AddNewEvent(self):
-    print "\n\n==SIMULACIÓN EN PAUSA==\n\n"
+    print "\n\n===SIMULACIÓN EN PAUSA===\n\n"
     CommandLineTools.ImprimirInstruccionesNuevoEvento()
     CommandLineTools.ImprimirComandos()
     print "\n"

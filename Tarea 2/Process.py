@@ -47,10 +47,13 @@ class Mensaje(Process):# dejare el tipo en el constructor. con el fin de usar es
     else:
       destino = "recibido"
       dePara = "de"
-    f.write("Mensaje " + destino + " " + dePara + " " + self.receptor + ". Texto: " + self.texto)
+    f.write("Mensaje " + destino + \
+            " " + dePara + \
+            " " + self.receptor + \
+            ". Texto: " + self.texto)
 
   def calcTiempo(self, mensaje):
-    self.tiempo = math.ceil(len(list(str(mensaje)))*0.2) # ver  bien por cuento se multiplica
+    self.tiempo = int(math.ceil(len(list(str(mensaje)))*0.2)) # ver  bien por cuento se multiplica
     self.tiempoTotal = self.tiempo
 
 
@@ -59,7 +62,7 @@ class Llamada(Process):# dejare el tipo en el constructor. con el fin de usar es
   def __init__(self, tipo, nombre, fecha, prioridad, numero, tiempo):
     super(Llamada, self).__init__(tipo, nombre, fecha, prioridad)
     self.numero=numero
-    self.tiempo=tiempo
+    self.calcTiempo(tiempo)
 
 
 class Contacto(Process):#Cuanto toma...
@@ -74,35 +77,35 @@ class Cualquiera(Process):
   
   def __init__(self, nombre, fecha, prioridad, tiempo):
     super(Cualquiera, self).__init__(6, nombre, fecha, prioridad)
-    self.tiempo=tiempo
+    self.calcTiempo(tiempo)
 
 
 class MUbicacion(Process):
   
   def __init__(self, nombre, fecha, prioridad,):
     super(MUbicacion, self).__init__(7, nombre, fecha, prioridad)
-    self.tiempo=2 #2 segundos
+    self.calcTiempo(2) #2 segundos
 
 
 class VUbicacion(Process):
   
   def __init__(self, nombre, fecha, prioridad, tiempo):
     super(VUbicacion, self).__init__(8, nombre, fecha, prioridad)
-    self.tiempo=tiempo
+    self.calcTiempo(tiempo)
 
 
 class Jugar(Process):
   
   def __init__(self, nombre, fecha, prioridad, tiempo):
     super(Jugar, self).__init__(9, nombre, fecha, prioridad)
-    self.tiempo=tiempo
+    self.calcTiempo(tiempo)
 
 
 class EscucharM(Process):
   
   def __init__(self, nombre, fecha, prioridad, tiempo):
     super(EscucharM, self).__init__(10, nombre, fecha, prioridad)
-    self.tiempo=tiempo
+    self.calcTiempo(tiempo)
 
 
 

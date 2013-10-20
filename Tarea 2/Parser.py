@@ -22,15 +22,25 @@ class Parser(object):
 
   def GetTipo(self, text):
     opciones = { "Hacer Llamada": 1, \
+                 "hacer llamada": 1, \
                  "Recibir Llamada": 2, \
+                 "recibir llamada": 2, \
                  "Enviar Mensaje": 3, \
+                 "enviar mensaje": 3, \
                  "Recibir Mensaje": 4, \
+                 "recibir mensaje": 4, \
                  "Agregar Contacto": 5, \
+                 "agregar contacto": 5, \
                  "Proceso Cualquiera": 6, \
+                 "proceso cualquiera": 6, \
                  "Enviar Ubicacion": 7, \
+                 "enviar ubicacion": 7, \
                  "Ver Ubicacion": 8, \
+                 "ver ubicacion": 8, \
                  "Jugar": 9, \
+                 "jugar": 9, \
                  "Escuchar Musica": 10, \
+                 "escuchar musica": 10, \
                }
     try:
       return opciones[text]
