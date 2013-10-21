@@ -1,0 +1,17 @@
+Cada bloque de disco posee 513 bytes a 3 bytes por linea
+Cada ram posee 1026 (disco x2)
+
+los inodos respondera a este formato:
+
+Nombre (30 bytes)
+Ubicacion (30 bytes)
+caracteres restantes (3 bytes)
+.
+.
+.
+punteros a bloques (150 linea , a 3 bytes por linea)
+.
+.
+.
+
+cada mensaje o contacto partira usando 2 lineas len y luego 3 chars para indicar el numero de chars que posea... esto para poder parsear despues.

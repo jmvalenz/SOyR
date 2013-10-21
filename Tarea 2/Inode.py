@@ -5,6 +5,7 @@ class Inode(object):
 	blocks=list()
 	name=""
 	ubication=""
+	blockLeft=""
 
 	def __init__(self, path):
 		self.ubication=path
@@ -21,3 +22,5 @@ class Inode(object):
 
 		#Limpio
 		self.blocks=[item.strip() for item in self.blocks]
+
+	
