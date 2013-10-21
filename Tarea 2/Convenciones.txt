@@ -3,13 +3,13 @@ Cada ram posee 1026 (disco x2)
 
 los inodos respondera a este formato:
 
-Nombre (30 bytes)
-Ubicacion (30 bytes)
-caracteres restantes (3 bytes)
+Nombre (30 bytes) [ej: contactos]
+Ubicacion (30 bytes) [ej: SOyR/Tarea2/disco]
+lineas restantes (3 bytes) [ej: 130] (SI NO HAY BLOQUES, ES 0, por lo que se agrega uno al agregar un dato)
 .
 .
 .
-punteros a bloques (150 linea , a 3 bytes por linea)
+punteros a bloques (150 linea , a 3 bytes por linea) [ej: 12]
 .
 .
 .

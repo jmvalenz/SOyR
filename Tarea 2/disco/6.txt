@@ -1,3 +1,4 @@
-Nombre: Mensajes.txt
-Ubicación: SOyR/Tarea2/disco
-Puntero: null
+mensajes
+SOyR/Tarea2/disco
+501
+008

@@ -6,6 +6,7 @@ from Process import *
 from operator import attrgetter
 import os
 from CommandLineTools import CommandLineTools
+import Disc
 try:
   # Win32
   from msvcrt import kbhit
@@ -38,6 +39,10 @@ except ImportError:
 class Simulator(object):
   #Constructor
   def __init__(self):
+
+    #CARGAR ARCHIVOS DE RAM Y DISCO A VARIABLES self.ram y self.disc (o algo asi)
+    Disc.boot()
+
     self.simTime = 0 #Operating System 
     self.oSystem = OS() #Simulation time
     CommandLineTools.Cls()

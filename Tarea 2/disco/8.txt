@@ -1,0 +1,4 @@
+Mensaje recibido de 2277567. Texto: Hola
+Mensaje recibido de 2277567. Texto: Alo?
+Mensaje enviado para 2277567. Texto: Como va?
+Mensaje recibido de 2277567. Texto: Bien y tu?

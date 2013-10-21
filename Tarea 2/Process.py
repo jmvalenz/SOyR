@@ -1,5 +1,5 @@
 import math
-
+import Disc
 class Process(object):
 
   def __init__(self, tipo, nombre, fecha, prioridad):
@@ -46,12 +46,7 @@ class Mensaje(Process):# dejare el tipo en el constructor. con el fin de usar es
     else:
       destino = "recibido"
       dePara = "de"
-    f = open("mensajes.txt", "a")
-    f.write("Mensaje " + destino + \
-            " " + dePara + \
-            " " + self.receptor + \
-            ". Texto: " + self.texto)
-    f.close()
+    Disc.writeContentToDisc("Mensaje " + destino + " " + dePara + " " + self.receptor + ". Texto: " + self.texto, "mensajes")
 
   def calcTiempo(self, mensaje):
     self.tiempo = int(math.ceil(len(mensaje) * 0.2)) # ver  bien por cuento se multiplica

@@ -1,3 +1,4 @@
+# encoding=utf-8
 # LEER
 # Uno, los comentarios son con un gato
 # Dos el error raro que te daba de tener que poner dos veces el 7 erra debido a que nunca cerraba el archi, cada vez que quieras abrirlo
@@ -20,7 +21,7 @@ for i in range (0,800):
 ##con las posiciones de archivos disponibles a partir de la linea 5
 archi=open('disco/0.txt','a')
 archi.write("IN:\n005\n006\n007\nNO:\n")
-for i in range(11,177):
+for i in range(8,177):
     if(i<10):
         d="00"
     elif(i<100):
@@ -99,11 +100,11 @@ archi.close()
 ##en total tenemos 453bytes por el primer archivo y 513 por el segundo.453 + 513 = 966 bytes para cada tipo
 ##966/3 = 322, finalmente tenemos 322 direcciones posibles para contactos, 322 para mensajes y 322 para historial
 archi=open('disco/5.txt','a')
-archi.write("Contactos\nSOyR/Tarea2/disco\n0\n")
+archi.write("contactos\nSOyR/Tarea2/disco\n0\n")
 archi.close()
 archi=open('disco/6.txt','a')
-archi.write("Mensajes\nSOyR/Tarea2/disco\n0\n")
+archi.write("mensajes\nSOyR/Tarea2/disco\n0\n")
 archi.close()
 archi=open('disco/7.txt','a')
-archi.write("Historial\nSOyR/Tarea2/disco\n0\n")
+archi.write("historial\nSOyR/Tarea2/disco\n0\n")
 archi.close()
