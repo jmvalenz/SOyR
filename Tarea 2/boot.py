@@ -38,7 +38,6 @@ def boot():
 
 	#Elimino simbolos blancos para evitar futuros problemas
 	availableDisc=[item.strip() for item in availableDisc]
-	print "\n  _                 _                  __  __ \n | |               (_)                |  \/  |\n | |   ___    ___   _   _ __    __ _  | \  / |\n | |  / _ \  / __| | | | '__|  / _` | | |\/| |\n | | | (_) | \__ \ | | | |    | (_| | | |  | |\n |_|  \___/  |___/ |_| |_|     \__,_| |_|  |_|\n "                                             
 
 	
 

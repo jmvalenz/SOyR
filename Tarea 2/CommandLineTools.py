@@ -1,6 +1,7 @@
 # encoding=utf-8
 import os
 from Parser import Parser
+import time
 
 class CommandLineTools(object):
   
@@ -80,3 +81,15 @@ class CommandLineTools(object):
         longg[i] = max(longg[i],len(str(el)))
     fofo = '  '.join('%'+str(longg[i])+'s' for i in xrange(0,8))
     print '\n'.join(fofo % (a,b,c,d,e,f,g,h) for (a,b,c,d,e,f,g,h) in processes)
+
+  @staticmethod
+  def PrintBootScreen():
+    print "\n" +\
+          "  _                 _                  __  __ \n" +\
+          " | |               (_)                |  \/  |\n" +\
+          " | |   ___    ___   _   _ __    __ _  | \  / |\n" +\
+          " | |  / _ \  / __| | | | '__|  / _` | | |\/| |\n" +\
+          " | | | (_) | \__ \ | | | |    | (_| | | |  | |\n" +\
+          " |_|  \___/  |___/ |_| |_|     \__,_| |_|  |_|"
+    print ".................. Cargando .................."
+    time.sleep(2)
