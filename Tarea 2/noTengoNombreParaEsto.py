@@ -9,5 +9,8 @@ def getInfo(name):
 
 	return info
 
+def addInfo(info , name):
+	writeToDisc(info , name)
+
 boot()
 startRam()
