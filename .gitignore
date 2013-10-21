@@ -1,5 +1,5 @@
 .DS_Store
 */.DS_Store
 *.pyc
-disco/*.txt
-ram/*.txt
+disco/
+ram/
