@@ -23,6 +23,16 @@ class CommandLineTools(object):
     for opcion in opciones:
       print opcion
 
+
+  @staticmethod
+  def ImprimirMenu():
+    print "Ingrese el número de opción que desea efectuar y luego presione ENTER. (Para volver a la ejecución, presione ENTER sin escribir nada)\n"
+    print "1: Ingresar acción manualmente"
+    print "2: Ver contactos"
+    print "3: Ver mensajes"
+    print "4: Ver historial de llamadas"
+
+
   @staticmethod
   def ImprimirInstruccionesNuevoEvento():
     print "Introduzca el evento que quiere agregar luego presione ENTER. (Dejar en blanco para continuar ejecución)\n"
@@ -54,7 +64,7 @@ class CommandLineTools(object):
 
     number_of_running_processes = os.NumberOfRunningProcesses()
     number_of_sleeping_processes = os.NumberOfProcesses() - number_of_running_processes
-    print "Para interrumpir e ingresar evento manualmente, presione cualquier tecla"
+    print "Para interrumpir e ingresar al menú, presione cualquier tecla"
     print "------------------------------------------------------------------------------------------------------------------"
     print "Tiempo transcurrido: ", time, " segundos"
     print "Procesos: ", os.NumberOfProcesses(), " en total, ",  number_of_running_processes, " running,", number_of_sleeping_processes, " sleeping"

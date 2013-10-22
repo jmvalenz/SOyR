@@ -1,7 +1,7 @@
 DISC_LOCATION = "disco/"
 
 def readFromDisc(block): 
-	f = open('disco/'+str(block)+'.txt')
+	f = open('disco/'+str(int(block))+'.txt')
 	f.readline()
 	info=f.readlines()
 	f.close()

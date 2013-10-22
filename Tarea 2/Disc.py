@@ -1,6 +1,7 @@
 # encoding=utf-8
 from Inode import *
 import DiscDriver
+import RamController
 
 availableDisc = []
 inodes = {}
@@ -45,3 +46,16 @@ def getFirstAvailableBlock():
   except IndexError:
     print "Memoria Llena"
     return -1
+
+def printFile(filename):
+  content = getInfo(filename)
+  print content
+
+def getInfo(name):
+  global inodes
+  info=""
+  inode=inodes[name]
+  for block in inode.blocks:
+    info=info+str(RamController.read(block))
+
+  return info

@@ -36,7 +36,7 @@ class Mensaje(Process):# dejare el tipo en el constructor. con el fin de usar es
   def __init__(self, tipo, nombre, fecha, prioridad, receptor, texto):
     super(Mensaje, self).__init__(tipo, nombre, fecha, prioridad)
     self.receptor=receptor
-    self.texto=texto
+    self.texto = texto.strip()
     self.calcTiempo(texto)
 
   def BeforeFinish(self):
@@ -46,7 +46,7 @@ class Mensaje(Process):# dejare el tipo en el constructor. con el fin de usar es
     else:
       destino = "recibido"
       dePara = "de"
-    Disc.writeContentToDisc("Mensaje " + destino + " " + dePara + " " + self.receptor + ". Texto: " + self.texto, "mensajes")
+    Disc.writeContentToDisc("Mensaje " + destino + " " + dePara + " " + self.receptor + ". Texto: " + self.texto + "\n", "mensajes")
 
   def calcTiempo(self, mensaje):
     self.tiempo = int(math.ceil(len(mensaje) * 0.2)) # ver  bien por cuento se multiplica
@@ -57,17 +57,28 @@ class Llamada(Process):# dejare el tipo en el constructor. con el fin de usar es
   
   def __init__(self, tipo, nombre, fecha, prioridad, numero, tiempo):
     super(Llamada, self).__init__(tipo, nombre, fecha, prioridad)
-    self.numero=numero
+    self.numero = numero.strip()
     self.calcTiempo(tiempo)
+
+  def BeforeFinish(self):
+    if(self.tipo == 1):
+      destino = "realizada"
+      dePara = "para"
+    else:
+      destino = "recibida"
+      dePara = "de"
+    Disc.writeContentToDisc("Llamada " + destino + " " + dePara + " " + str(self.numero) + ". Duracion: " + str(self.tiempoTotal) + "\n", "historial")
 
 
 class Contacto(Process):#Cuanto toma...
   
   def __init__(self, nombre, fecha, prioridad, nombreContacto, numero):
     super(Contacto, self).__init__(5, nombre, fecha, prioridad)
-    self.numero=numero
-    self.nombreContacto=nombreContacto
+    self.numero = numero.strip()
+    self.nombreContacto = nombreContacto
 
+  def BeforeFinish(self):
+    Disc.writeContentToDisc("Nombre: " + self.nombreContacto + ". Numero: " + str(self.numero) + "\n", "contactos")
 
 class Cualquiera(Process):
   

@@ -1,6 +1,5 @@
 from Queue import *
 from DiscDriver import*
-from boot import*
 
 
 availableRam=list()
@@ -17,7 +16,7 @@ def startRam():
 
 def agregarIndicador(info,indicador):
         lista =[]
-        stri = info
+        stri = " ".join(info)
         while True:
                 num=stri.find("\n")
                 if num!=-1:
@@ -112,9 +111,9 @@ def readDiscToRam(request):
 		discToRam.pop(aux)
 		availableRam.append(aux)
 
-	info=readFromDisc(request)
-	block=availableRam.pop()
-	discToRam[request]=block
+	info = readFromDisc(request)
+	block = availableRam.pop()
+	discToRam[request] = block
 	writeToRam(block,info)
 
 	print info

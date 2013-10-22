@@ -7,6 +7,7 @@ from operator import attrgetter
 import os
 from CommandLineTools import CommandLineTools
 import Disc
+import RamController
 try:
   # Win32
   from msvcrt import kbhit
@@ -42,6 +43,7 @@ class Simulator(object):
 
     #CARGAR ARCHIVOS DE RAM Y DISCO A VARIABLES self.ram y self.disc (o algo asi)
     Disc.boot()
+    RamController.startRam()
 
     self.simTime = 0 #Operating System 
     self.oSystem = OS() #Simulation time
@@ -71,27 +73,43 @@ class Simulator(object):
       time.sleep(0.2) #Pause
       self.simTime += 1 #Time advances
       if kbhit():
-        self.AddNewEvent()
+        self.Interrupt()
 
 
 
-  def AddNewEvent(self):
+  def Interrupt(self):
     print "\n\n===SIMULACIÓN EN PAUSA===\n\n"
-    CommandLineTools.ImprimirInstruccionesNuevoEvento()
-    CommandLineTools.ImprimirComandos()
-    print "\n"
-    parser = Parser()
-    while True:
-      comando = raw_input()
-      if comando.strip() == "":
+    CommandLineTools.ImprimirMenu()
+    opcion = raw_input().strip()
+    if opcion == "":
+      return
+    if opcion == "1":
+      CommandLineTools.ImprimirInstruccionesNuevoEvento()
+      CommandLineTools.ImprimirComandos()
+      print "\n"
+      parser = Parser()
+      while True:
+        comando = raw_input()
+        if comando.strip() == "":
+          break
+        success = parser.CheckCommand(comando, self.simTime)
+        if not success:
+          print "Error! Input incorrecto\n"
+          CommandLineTools.ImprimirComandos()
+          continue
+        self.eventsList.insert(0, success)
         break
-      success = parser.CheckCommand(comando, self.simTime)
-      if not success:
-        print "Error! Input incorrecto\n"
-        CommandLineTools.ImprimirComandos()
-        continue
-      self.eventsList.insert(0, success)
-      break
+      return    
+    if opcion == "2":
+      Disc.printFile("contactos")
+    elif opcion == "3":
+      Disc.printFile("mensajes")
+    elif opcion == "4":
+      Disc.printFile("historial")
+    else:
+      return
+    print "\n"
+    raw_input("Presione ENTER para continuar simulación")
 
 
 
